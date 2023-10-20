@@ -9,7 +9,7 @@ const login = async (req, res) => {
 		}
 		console.log(email, password);
 		const respon = await User.findOne({ where: { email: email } });
-
+		console.log(respon);
 		if (respon) {
 			let { dataValues } = respon;
 			if (email === dataValues.email && password === dataValues.password) {
