@@ -7,10 +7,6 @@ const postFav = async (req, res) => {
 		if (!id || !name || !origin || !status || !image || !species || !gender) {
 			return res.status(401).send("Faltan Datos");
 		}
-		console.log(req.session.userId);
-		// const user = await User.findByPk(req.session.userId);
-		// const favorite = await Favorite.findByPk(id);
-
 		await Favorite.findOrCreate({
 			where: {
 				id: id,
