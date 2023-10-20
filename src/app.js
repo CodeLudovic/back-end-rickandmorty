@@ -2,17 +2,6 @@ const express = require("express");
 const server = express();
 const morgan = require("morgan");
 const router = require("./routes/index");
-const session = require("express-session");
-const cookieParser = require("cookie-parser");
-
-server.use(cookieParser());
-server.use(
-	session({
-		secret: "123456", // Cambia esto por una clave segura en producción
-		resave: false,
-		saveUninitialized: true,
-	})
-);
 
 server.use(express.json());
 server.use(morgan("dev"));
