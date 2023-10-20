@@ -12,6 +12,7 @@ const login = async (req, res) => {
 		console.log(respon);
 		if (respon) {
 			let { dataValues } = respon;
+			console.log(dataValues);
 			if (email === dataValues.email && password === dataValues.password) {
 				return res.status(200).json({
 					access: true,
