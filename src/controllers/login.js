@@ -7,6 +7,7 @@ const login = async (req, res) => {
 		if (email === "" || password === "" || !email || !password) {
 			return res.status(400).send("Faltan Datos");
 		}
+		console.log(email, password);
 		const respon = await User.findOne({ where: { email: email } });
 
 		if (respon) {
